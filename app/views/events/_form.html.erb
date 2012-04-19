@@ -1,0 +1,59 @@
+<%= form_for(@event) do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="class">
+    <div id="buildselect">
+      <%= f.label :Where %><br />
+      <%  buildings = Building.all %>
+      <%  ids_and_names = buildings.map do |b| [b.buildname, b.id] end %>
+      <%= f.select :building_id, ids_and_names, :prompt => "select a building.."%>  Didn't find this building? <%= link_to 'Add New Building', :action=> "new", :controller =>'buildings' %>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :What_to_eat %><br />
+    <%= f.text_field :desc %>
+  </div>
+
+    <div class="field">
+    <%= f.label :When_starts%><br />
+    <%= f.datetime_select :start_time%>
+  </div>
+  
+  <div class="field">
+    <%= f.label :ends %><br />
+    <%= f.datetime_select :end_time %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :Who_privides_food %><br />
+    <%= f.text_field :host %>
+  </div> 
+  <div class="field">
+    <%= f.label :Why %> (event)<br />
+    <%= f.text_field :eventname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Do_they_check_SUID? %><br />
+    <%= f.check_box :idcheck %>Yes
+  </div>
+  <div class="field">
+    <%= f.hidden_field :user_id, :value => session[:user_id] %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :created_at, :value => Time.now %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

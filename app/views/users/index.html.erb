@@ -1,0 +1,26 @@
+<h1>Listing Users</h1>
+<div id="notice"><%= flash[:alert] %></div>
+<table>
+  <tr>
+    <th>Username</th>
+    <th>Followers</th>
+    <th>Following</th>
+
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= link_to user.username, user %> </td>
+
+    <td>  <%=user.followers.count%>  </td>
+       <td>  <%=user.following.count%>  </td>
+
+    <!--<td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td> -->
+</tr>
+  <% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User', :controller=> 'users', :action=>'register' %>

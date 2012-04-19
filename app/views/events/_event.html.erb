@@ -1,0 +1,20 @@
+<tr>
+  <!--<td><%= event.id %></td>-->
+    <td><%= event.desc %></td>
+    <td><%= event.building.buildname %></td>
+    <td><%= event.start_time.to_date %></td>
+    <td>
+      <% if event.idcheck %>
+        <%= "Yes"%>
+        <%else%>
+        <%= "No"%>
+      <% end %>  
+    </td>
+  
+    <td><%= link_to 'Detail', event %></td>
+        <% if session[:user_id].nil?%>
+      <% elsif User.find(session[:user_id]).username == "admin" or event.user_id == session[:user_id] %>
+    <td><% link_to 'Edit', edit_event_path(event) %></td>
+    <td><% link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %></td>
+    <%end%>
+</tr>

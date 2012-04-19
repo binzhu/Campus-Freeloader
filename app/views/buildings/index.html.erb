@@ -1,0 +1,28 @@
+<h1>Listing Buildings</h1>
+
+<table>
+  <tr>
+    <th>Building</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @buildings.each do |building| %>
+   <tr>
+    <td><%= building.buildname %></td>
+    <td><%= building.desc %></td>
+    <td><%= link_to 'More..', building %></td>
+    <% if session[:user_id].nil?%>
+      <%elsif User.find(session[:user_id]).username == "admin" %>
+    <td><%= link_to 'Edit', edit_building_path(building) %></td>
+    <td><%= link_to 'Destroy', building, :confirm => 'Are you sure?', :method => :delete %></td>
+    <%  end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Building', new_building_path %>

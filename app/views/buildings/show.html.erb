@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Building Name:</b>
+  <%= @building.buildname %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @building.desc %>
+</p>
+
+<p>
+  <b>Address Line 1:</b>
+  <%= @building.addrln1 %>
+</p>
+
+<p>
+  <b>Address Line 2:</b>
+  <%= @building.addrln2 %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @building.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @building.state %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%= @building.zip %>
+</p>
+
+    <% if session[:user_id].nil?%>
+      <%elsif User.find(session[:user_id]).username == "admin" %>
+<%= link_to 'Edit', edit_building_path(@building) %> |
+    <% end %>
+<%= link_to 'Back', buildings_path %>

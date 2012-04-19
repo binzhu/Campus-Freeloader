@@ -1,0 +1,48 @@
+<style>
+  #map_canvas
+  {
+    width: 70%;
+    height: 320px;
+  }
+</style>
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+<script type="text/javascript">
+  var gMap;
+  var gCenterLatLng = new google.maps.LatLng(43.037956, -76.13343);
+
+  window.onload = function () {
+      var myOptions = {
+        zoom: 16,
+        center: gCenterLatLng,
+        mapTypeId: google.maps.MapTypeId.HYBRID,
+        disableDoubleClickZoom: true,
+        mapTypeControl: false,
+        navigationControl: true,
+        scaleControl: true,
+        streetViewControl: false
+      };
+      gMap = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+      
+      var building, latlng, title, image, marker;
+      
+      <% @events.each do |e| %>
+      event = <%= e.to_json.to_s.html_safe %>.event
+      building = <%= e.building.to_json.to_s.html_safe %>.building
+      latlng = new google.maps.LatLng(building.lat, building.lon);
+      marker = new google.maps.Marker({position: latlng,
+                                        title:event.eventname +'@' + building.buildname, map: gMap
+        });
+        
+        google.maps.event.addListener(marker, 'click',
+        function(){
+          location.href = "<%= e.id%>";
+        }  )
+        
+        <% end %>
+      
+  }
+</script>
+<div id="map_canvas">
+</div>

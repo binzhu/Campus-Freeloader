@@ -1,0 +1,30 @@
+
+
+<div id="recent">
+  <h1>Look out, Free Food Around!</h1>
+  <%= render :partial => "shared/map", :object => @events, :as => 'events' %>
+     <table>
+  <tr>
+    <th>What to eat</th>
+    <th>Where</th>
+    <th>When</th>
+    <th>Require ID</th>
+    <th></th>
+
+  </tr>
+ <%= render :partial => 'event', :collection => @events %>
+
+</table>
+
+<br />
+<div id="newevt">
+  <div id="newevttxt">
+    Found free food?
+  </div>
+  <div id="newevtbtn">
+  <%= button_to 'Tell us!', :action=> "new", :controller =>'events' %>
+  </div>
+</div>
+</div>
+
+

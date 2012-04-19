@@ -1,0 +1,26 @@
+<%= form_for(@follow) do |f| %>
+  <% if @follow.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@follow.errors.count, "error") %> prohibited this follow from being saved:</h2>
+
+      <ul>
+      <% @follow.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field"> 
+  <%  if session[:user_id].nil? %>
+   <%= f.hidden_field :following_user_id, :value => 0  %> <% else %>
+   <%= f.hidden_field :following_user_id, :value => @follow.following_user.id  %>
+  <%  end %>
+   <%= f.hidden_field :followed_user_id, :value => @follow.followed_user.id %>
+
+  </div>
+
+  <div class="actions">
+    <%= f.submit :value =>'Follow'%>
+  </div>
+<% end %>

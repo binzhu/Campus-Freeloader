@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Following user:</b>
+  <%= @follow.following_user_id %>
+</p>
+
+<p>
+  <b>Followed user:</b>
+  <%= @follow.followed_user_id %>
+</p>
+
+    <% if session[:user_id].nil?%>
+      <% elsif User.find(session[:user_id]).username == "admin" %>
+<%= link_to 'Edit', edit_follow_path(@follow) %> |
+
+<% end %>
+<%= link_to 'Back', follows_path %>

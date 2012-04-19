@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+<div id="notice"><%= flash[:alert]%></div>
+<div id="userprof">
+  <p>
+    <b>Username:</b>
+    <%= @user.username %>
+  </p>
+  
+  <p>
+    <b>Email:</b>
+    <%= @user.email %>
+  </p>
+  
+  <p>
+    <b>First Name:</b>
+    <%= @user.fname %>
+  </p>
+  
+  <p>
+    <b>Last Name:</b>
+    <%= @user.lname %>
+  </p>
+  
+  <p>
+    <b>Building:</b>
+    <%= @user.building.buildname %>
+  </p>
+  <p><%# =@user.username+ " has found " + @user.discovery_cnt.to_s + " free food events!"%></p>
+</div>
+
+<div id="friends">
+  <b>Following:</b>
+    <div id="following">
+      <% @user.following.each do |f| %>
+      <br /><%= link_to f.username, f %>
+     
+      <%end%>
+    </div>
+    <br />
+    <b>Followers:</b>
+    <div id="followers">
+      <% @user.followers.each do |f| %>
+      <br /><%= link_to f.username, f %>
+      <%end%>
+    </div>
+</div>
+
+
+<div class="fix" >
+</div>
+<div id="userbtn" >
+  
+<% if @user.id.to_s == session[:user_id].to_s  %>
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<% end %>
+
+<%= link_to 'Back', users_path %>
+</div>
+<div id="follow" >
+  
+<% if session[:user_id].nil? %>
+  <%= render 'follows/form'%>
+<% elsif @user.followers.include?(User.find(session[:user_id]))  %>
+ Following
+  <% else %>
+<%= render 'follows/form'%>
+  <% end %>
+</div>
+

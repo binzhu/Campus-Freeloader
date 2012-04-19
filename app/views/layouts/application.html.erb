@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CampusFreeLoader</title>
+  <%= stylesheet_link_tag    "application" %>
+  
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+<div id="container">
+  <div id="header">
+    <div id="headlink">
+      <%= link_to image_tag("logo.jpg", :alt => "CampusFreeLoader"), :controller=>'events', :action=>'recent' %>
+    </div>
+    <div id="authenlink">
+      <% if session[:user_id].nil? %>
+      <%= link_to 'Login', :controller => 'admin', :action => 'login' %> or
+      <%= link_to "Register", :controller=> "users", :action=> "register"%>
+      <% else%>
+      <% cuser=User.find_by_id(session[:user_id]) %>
+      <%= link_to cuser.username, cuser %> | <%=link_to  'Logout', :controller => 'admin', :action => 'logout' %>
+      <% end%>
+    </div>
+  </div>
+  
+  <div class="fix"></div>
+  <div id="navigation">
+    <div class="navi"><a href="/events/recent">Recent</a></div>
+    <div class="navi"><a href="/events">All Events</a></div>
+    <div class="navi"><a href="/buildings">Buildings</a></div>
+    <div class="navi"><a href="/users">Users</a></div>
+    <!--<div class="navi"><a href="/attends">Attend</a></div>-->
+  </div>
+  <div id="content">    
+  <%= yield %>
+  </div>
+   <div class="fix"></div>
+  <div id="footer">
+    <div id="ftrcopy">
+      &copy; All rights reserved <%= Date.today.year%>
+    </div>
+    <div id="ftrlnk">
+      <a href="http://localhost:3000/users/aboutus">About Us</a>
+      <a href="http://localhost:3000/users/suggestion">Suggestions</a>
+      <a href="http://localhost:3000/users/policy">Policy</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

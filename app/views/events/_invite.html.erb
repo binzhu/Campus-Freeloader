@@ -1,0 +1,11 @@
+  <%= form_tag(:action => 'invitefriend') do %>
+  <%= submit_tag 'Invite Friends', :action => 'invitefriend' %>
+  <div id="invfri">
+  <%= hidden_field_tag :id, @event.id %>
+  <% cu=User.find(session[:user_id])%>
+  <% cu.followers.each do |f| %>
+  <input type="checkbox" name="invitees[]" value="<%= f.id %>" /> <%= f.username%> <br />
+  <% end %>
+  </div>
+  <% # = button_to 'invite friends', :action=>'invitefriend', :id=> @event.id, :confirmation=> 'Would you like ' %>
+  <% end %>

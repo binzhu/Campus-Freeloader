@@ -1,0 +1,23 @@
+<%= form_for(@attend) do |f| %>
+  <% if @attend.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@attend.errors.count, "error") %> prohibited this attend from being saved:</h2>
+
+      <ul>
+      <% @attend.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="actions">
+    <%= f.submit :value => 'Eat Here!!' %>
+  </div>
+  
+  <div class="field">
+    <%= f.hidden_field :user_id, :value => session[:user_id] %>
+    <%= f.hidden_field :event_id, :value =>@event.id %>
+    <%= f.hidden_field :attend, :value => Date.today %>
+  </div>
+<% end %>

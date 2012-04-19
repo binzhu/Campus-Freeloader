@@ -1,0 +1,28 @@
+<h1>Listing Follows</h1>
+
+<table>
+  <tr>
+    <th>Following user</th>
+    <th>Followed user</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @follows.each do |follow| %>
+  <tr>
+    <td><%= follow.following_user.username %></td>
+    <td><%= follow.followed_user.username %></td>
+    <td><%= link_to 'Show', follow %></td>
+    <% if session[:user_id].nil?%>
+      <% elsif User.find(session[:user_id]).username == "admin" %>
+    <td><%= link_to 'Edit', edit_follow_path(follow) %></td>
+    <td><%= link_to 'Destroy', follow, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Follow', new_follow_path %>

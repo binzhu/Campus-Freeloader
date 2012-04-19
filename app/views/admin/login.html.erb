@@ -1,0 +1,28 @@
+<div id="welcome">
+    Any time to kill today?<br /><br />
+    Call up your friend,<br /><br />
+    and check out free pizza on campus today!
+    
+</div>
+<div id="login">
+<h1>Login</h1>
+<form method="post">
+    <div id="notice">
+      <%= flash[:alert]%>
+    </div>
+    
+    
+    <p>
+      Username: <%=text_field_tag :username, params[:username] %>
+    </p>
+    <p>
+      Password:&nbsp;&nbsp;&nbsp;<%= password_field_tag :password, params[:password] %>
+    </p>
+    <p>
+      <%= submit_tag "Login"%>
+    </p>
+</form>Doesn't have an account?
+<div id="register">
+<%= button_to "Register",  :action=> "register", :controller =>'users' %>
+</div>
+</div>

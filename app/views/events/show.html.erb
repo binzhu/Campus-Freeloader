@@ -1,0 +1,84 @@
+<p id="notice"><%= notice %></p>
+<div id="eventsshow">
+<p>
+  <b>What's goint on: </b>
+  <%= @event.eventname %>
+</p>
+
+<p>
+  <b>Anything to eat? </b>
+  <%= @event.desc %>
+</p>
+
+<p>
+  <b>Host:</b>
+  <%= @event.host %>
+</p>
+
+<p>
+  <b>Where:</b>
+  <%= @event.building.buildname %>
+</p>
+
+<p>
+  <b>ID Required:</b>
+      <% if @event.idcheck %>
+        <%= "Yes"%>
+        <%else%>
+        <%= "No"%>
+      <% end %>  
+</p>
+
+<p>
+  <b>Created By:</b>
+  <%= @event.user.username %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @event.start_time.to_date %>
+</p>
+
+<p>
+  <b>Time:</b>
+  <%= @event.event_hours %>
+  <%if @event.end_time.hour < 12 %>
+  <%= "Morning"%>
+  <%elsif @event.end_time.hour < 17 %>
+    <%= "Afternoon"%>
+    <%else%>
+      <%= "Evening"%>
+    <%end%>
+</p>
+
+
+<div id="attendbtn">
+  <% evats = @event.attends.map { |a| a.user_id } %>
+  <% if evats.include?(session[:user_id].to_s)%>
+Attending
+  <% else %>
+  <%= render '/attends/form' %>
+  <%end%>
+</div>
+
+<div id="funcbtn">
+<% if @event.user_id = session[:user_id] %>
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<% end %>
+<%= link_to 'Back', events_path %> 
+</div>
+
+</div>
+<div id="attendee">
+  <%if @event.attends.count >0 %>
+    <br /><b>Who is attending</b>
+    <%= render :partial => 'attend', :collection => @event.attends %>
+  <% else %>
+      nobody attending
+  <%end%>
+</div>
+
+<div id="invite">
+<%= render 'invite' %>
+</div>
+
