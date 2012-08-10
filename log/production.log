@@ -117,3 +117,212 @@ ActionController::RoutingError (No route matches [GET] "/images/bg.jpg"):
   
 
 Rendered /home/bzhu01/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2012-08-09 23:57:49 -0400
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+Rendered follows/_form.html.erb (4.5ms)
+Rendered users/show.html.erb within layouts/application (126.2ms)
+Completed 200 OK in 205ms (Views: 167.8ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/images/bg.jpg" for 127.0.0.1 at 2012-08-09 23:57:49 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/bg.jpg"):
+  
+
+Rendered /home/bzhu01/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2012-08-09 23:57:51 -0400
+  Processing by UsersController#index as HTML
+Rendered users/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 29ms (Views: 25.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/images/bg.jpg" for 127.0.0.1 at 2012-08-09 23:57:51 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/bg.jpg"):
+  
+
+Rendered /home/bzhu01/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+
+
+Started GET "/events/recent" for 127.0.0.1 at 2012-08-09 23:57:53 -0400
+  Processing by EventsController#recent as HTML
+Rendered shared/_map.html.erb (14.1ms)
+Rendered events/_event.html.erb (1.6ms)
+Rendered events/recent.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 26ms (Views: 22.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/images/bg.jpg" for 127.0.0.1 at 2012-08-09 23:57:53 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/bg.jpg"):
+  
+
+Rendered /home/bzhu01/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2012-08-09 23:57:55 -0400
+  Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+Rendered attends/_form.html.erb (2.0ms)
+Rendered events/_invite.html.erb (2.2ms)
+Rendered events/show.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 18ms (Views: 12.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/images/bg.jpg" for 127.0.0.1 at 2012-08-09 23:57:55 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/bg.jpg"):
+  
+
+Rendered /home/bzhu01/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2012-08-09 23:59:54 -0400
+  Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+Rendered attends/_form.html.erb (1.2ms)
+Rendered events/_invite.html.erb (1.1ms)
+Rendered events/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/images/bg.jpg" for 127.0.0.1 at 2012-08-09 23:59:54 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/bg.jpg"):
+  
+
+Rendered /home/bzhu01/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+
+
+Started POST "/attends" for 127.0.0.1 at 2012-08-09 23:59:55 -0400
+  Processing by AttendsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dW24KWRBPXJp2m3o9MwD98zmnnjNjBKCWcTibtwmiYM=", "commit"=>"Eat Here!!", "attend"=>{"user_id"=>"3", "event_id"=>"1", "attend"=>"2012-08-09"}}
+Redirected to http://localhost:3000/events/1
+Completed 302 Found in 15ms
+
+
+Started GET "/events/1" for 127.0.0.1 at 2012-08-09 23:59:55 -0400
+  Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+Rendered events/_attend.html.erb (2.1ms)
+Rendered events/_invite.html.erb (1.2ms)
+Rendered events/show.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/images/bg.jpg" for 127.0.0.1 at 2012-08-09 23:59:55 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/bg.jpg"):
+  
+
+Rendered /home/bzhu01/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2012-08-09 23:59:58 -0400
+  Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+Rendered events/_attend.html.erb (0.6ms)
+Rendered events/_invite.html.erb (1.0ms)
+Rendered events/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/images/bg.jpg" for 127.0.0.1 at 2012-08-09 23:59:58 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/bg.jpg"):
+  
+
+Rendered /home/bzhu01/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2012-08-10 00:00:14 -0400
+  Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+Rendered events/show.html.erb within layouts/application (87.8ms)
+Completed 500 Internal Server Error in 155ms
+
+ActionView::Template::Error (undefined method `all' for #<Array:0x00000005055d98>):
+    53: 
+    54: 
+    55: <div id="attendbtn">
+    56:   <% evats = Attend.find_all_by_event_id(@event.id).all.map { |a| a.user_id } %>
+    57:   <% if evats.include?(session[:user_id])%>
+    58: Attending
+    59:   <% else %>
+  app/views/events/show.html.erb:56:in `_app_views_events_show_html_erb___4030224231087135227_41382620'
+  app/controllers/events_controller.rb:49:in `show'
+
+Rendered /home/bzhu01/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /home/bzhu01/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /home/bzhu01/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (3.9ms)
+
+
+Started GET "/events/recent" for 127.0.0.1 at 2012-08-10 00:00:34 -0400
+  Processing by EventsController#recent as HTML
+Rendered shared/_map.html.erb (54.5ms)
+Rendered events/_event.html.erb (34.0ms)
+Rendered events/recent.html.erb within layouts/application (94.4ms)
+Completed 200 OK in 167ms (Views: 137.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/images/bg.jpg" for 127.0.0.1 at 2012-08-10 00:00:34 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/bg.jpg"):
+  
+
+Rendered /home/bzhu01/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2012-08-10 00:00:35 -0400
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+Rendered follows/_form.html.erb (4.9ms)
+Rendered users/show.html.erb within layouts/application (48.0ms)
+Completed 200 OK in 59ms (Views: 51.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/images/bg.jpg" for 127.0.0.1 at 2012-08-10 00:00:35 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/bg.jpg"):
+  
+
+Rendered /home/bzhu01/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/events/recent" for 127.0.0.1 at 2012-08-10 00:00:37 -0400
+  Processing by EventsController#recent as HTML
+Rendered shared/_map.html.erb (2.2ms)
+Rendered events/_event.html.erb (0.9ms)
+Rendered events/recent.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/images/bg.jpg" for 127.0.0.1 at 2012-08-10 00:00:37 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/bg.jpg"):
+  
+
+Rendered /home/bzhu01/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2012-08-10 00:00:39 -0400
+  Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+Rendered attends/_form.html.erb (2.2ms)
+Rendered events/_attend.html.erb (2.1ms)
+Rendered events/_invite.html.erb (2.1ms)
+Rendered events/show.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 23ms (Views: 17.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/images/bg.jpg" for 127.0.0.1 at 2012-08-10 00:00:39 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/bg.jpg"):
+  
+
+Rendered /home/bzhu01/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
