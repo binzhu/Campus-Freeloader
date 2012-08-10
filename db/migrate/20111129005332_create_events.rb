@@ -4,9 +4,9 @@ class CreateEvents < ActiveRecord::Migration
       t.string :eventname
       t.string :desc
       t.string :host
-      t.string :building_id
+      t.integer :building_id
       t.boolean :idcheck
-      t.string :user_id
+      t.integer :user_id
       t.datetime :start_time
       t.datetime :end_time
 

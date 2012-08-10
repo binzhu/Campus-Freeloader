@@ -8,6 +8,8 @@ class CreateBuildings < ActiveRecord::Migration
       t.string :city
       t.string :state
       t.string :zip
+      t.decimal :lat
+      t.decimal :lon
 
       t.timestamps
     end

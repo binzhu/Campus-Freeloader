@@ -11,11 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120810034952) do
+ActiveRecord::Schema.define(:version => 20120419113727) do
 
   create_table "attends", :force => true do |t|
-    t.integer  "user_id",    :limit => 255
-    t.integer  "event_id",   :limit => 255
+    t.integer  "user_id"
+    t.integer  "event_id"
     t.date     "attend"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -29,19 +29,19 @@ ActiveRecord::Schema.define(:version => 20120810034952) do
     t.string   "city"
     t.string   "state"
     t.string   "zip"
+    t.decimal  "lat"
+    t.decimal  "lon"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.float    "lat"
-    t.float    "lon"
   end
 
   create_table "events", :force => true do |t|
     t.string   "eventname"
     t.string   "desc"
     t.string   "host"
-    t.integer  "building_id", :limit => 255
+    t.integer  "building_id"
     t.boolean  "idcheck"
-    t.integer  "user_id",     :limit => 255
+    t.integer  "user_id"
     t.datetime "start_time"
     t.datetime "end_time"
     t.datetime "created_at"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(:version => 20120810034952) do
     t.string   "email"
     t.string   "fname"
     t.string   "lname"
-    t.integer  "building_id", :limit => 255
+    t.integer  "building_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

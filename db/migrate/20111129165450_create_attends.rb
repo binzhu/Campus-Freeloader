@@ -1,8 +1,8 @@
 class CreateAttends < ActiveRecord::Migration
   def self.up
     create_table :attends do |t|
-      t.string :user_id
-      t.string :event_id
+      t.integer :user_id
+      t.integer :event_id
       t.date :attend
 
       t.timestamps

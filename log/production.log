@@ -326,3 +326,11 @@ ActionController::RoutingError (No route matches [GET] "/images/bg.jpg"):
   
 
 Rendered /home/bzhu01/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+Migrating to AddUsers (20120419113727)
+Migrating to AddBuildings (20111208042559)
+Migrating to AddGeolocationToBuilding (20111208033458)
+Migrating to CreateFollows (20111206144146)
+Migrating to CreateAttends (20111129165450)
+Migrating to CreateUsers (20111129005446)
+Migrating to CreateEvents (20111129005332)
+Migrating to CreateBuildings (20111129004316)
