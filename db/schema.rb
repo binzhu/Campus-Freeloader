@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(:version => 20120419113727) do
     t.string   "zip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.float    "lat"
-    t.float    "lon"
+    t.decimal  "lat"
+    t.decimal  "lon"
   end
 
   create_table "events", :force => true do |t|

@@ -1,0 +1,63 @@
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-09 23:20:38 -0400
+  Processing by EventsController#recent as HTML
+Completed 500 Internal Server Error in 31ms
+
+ActiveRecord::StatementInvalid (Could not find table 'events'):
+  app/controllers/events_controller.rb:22:in `recent'
+
+Rendered /home/bzhu01/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /home/bzhu01/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /home/bzhu01/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-09 23:20:40 -0400
+  Processing by EventsController#recent as HTML
+Completed 500 Internal Server Error in 1ms
+
+ActiveRecord::StatementInvalid (Could not find table 'events'):
+  app/controllers/events_controller.rb:22:in `recent'
+
+Rendered /home/bzhu01/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /home/bzhu01/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+Rendered /home/bzhu01/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (2.9ms)
+Migrating to CreateBuildings (20111129004316)
+Migrating to CreateEvents (20111129005332)
+Migrating to CreateUsers (20111129005446)
+Migrating to CreateAttends (20111129165450)
+Migrating to CreateFollows (20111206144146)
+Migrating to AddGeolocationToBuilding (20111208033458)
+Migrating to AddBuildings (20111208042559)
+Migrating to AddUsers (20120419113727)
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-09 23:21:39 -0400
+  Processing by EventsController#recent as HTML
+Rendered shared/_map.html.erb (0.9ms)
+Rendered events/_event.html.erb (0.0ms)
+Rendered events/recent.html.erb within layouts/application (33.5ms)
+Completed 500 Internal Server Error in 81ms
+
+ActionView::Template::Error (application.css isn't precompiled):
+    2: <html>
+    3: <head>
+    4:   <title>CampusFreeLoader</title>
+    5:   <%= stylesheet_link_tag    "application" %>
+    6:   
+    7:   <%= javascript_include_tag :defaults %>
+    8:   <%= csrf_meta_tag %>
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__1700671457839788254_29384080'
+  app/controllers/events_controller.rb:24:in `recent'
+
+Rendered /home/bzhu01/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /home/bzhu01/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /home/bzhu01/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (3.3ms)
+Compiled application.js  (1ms)  (pid 11792)
+Compiled jquery.js  (1ms)  (pid 11792)
+Compiled jquery_ujs.js  (0ms)  (pid 11792)
+Compiled application.css  (0ms)  (pid 11792)
+Compiled application.js  (3ms)  (pid 11788)
+Compiled jquery.js  (19ms)  (pid 11788)
+Compiled jquery_ujs.js  (27ms)  (pid 11788)
+Compiled application.css  (0ms)  (pid 11788)
