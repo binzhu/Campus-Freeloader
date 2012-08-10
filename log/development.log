@@ -5811,3 +5811,131 @@ Rendered /home/bzhu01/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.1/lib/action
 
 Started GET "/assets/logo.jpg" for 127.0.0.1 at 2012-08-09 23:06:22 -0400
 Served asset /logo.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-09 23:34:54 -0400
+  Processing by EventsController#recent as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_time > '2012-08-10 03:34:54.620208') ORDER BY end_time[0m
+  [1m[35mBuilding Load (0.2ms)[0m  SELECT "buildings".* FROM "buildings" WHERE "buildings"."id" = 1 LIMIT 1
+  [1m[36mBuilding Load (0.2ms)[0m  [1mSELECT "buildings".* FROM "buildings" WHERE "buildings"."id" = 2 LIMIT 1[0m
+  [1m[35mBuilding Load (0.2ms)[0m  SELECT "buildings".* FROM "buildings" WHERE "buildings"."id" = 4 LIMIT 1
+Rendered shared/_map.html.erb (103.2ms)
+Rendered events/_event.html.erb (2.8ms)
+Rendered events/recent.html.erb within layouts/application (115.4ms)
+Compiled application.css  (0ms)  (pid 11900)
+Compiled application.js  (3ms)  (pid 11900)
+Compiled jquery.js  (25ms)  (pid 11900)
+Compiled jquery_ujs.js  (0ms)  (pid 11900)
+Completed 200 OK in 216ms (Views: 201.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-09 23:34:54 -0400
+Served asset /jquery_ujs.js - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-09 23:34:54 -0400
+Served asset /jquery.js - 200 OK (28ms)
+
+
+Started GET "/images/bg.jpg" for 127.0.0.1 at 2012-08-09 23:34:55 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/bg.jpg"):
+  
+
+Rendered /home/bzhu01/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2012-08-09 23:34:56 -0400
+  Processing by AdminController#login as HTML
+Rendered admin/login.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-09 23:34:56 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-09 23:34:56 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/images/bg.jpg" for 127.0.0.1 at 2012-08-09 23:34:56 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/bg.jpg"):
+  
+
+Rendered /home/bzhu01/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2012-08-09 23:34:59 -0400
+  Processing by AdminController#login as HTML
+  Parameters: {"username"=>"admin2", "password"=>"[FILTERED]", "commit"=>"Login"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'admin2' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 31ms
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-09 23:34:59 -0400
+  Processing by EventsController#recent as HTML
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE (end_time > '2012-08-10 03:34:59.627966') ORDER BY end_time
+  [1m[36mBuilding Load (0.2ms)[0m  [1mSELECT "buildings".* FROM "buildings" WHERE "buildings"."id" = 1 LIMIT 1[0m
+  [1m[35mBuilding Load (0.2ms)[0m  SELECT "buildings".* FROM "buildings" WHERE "buildings"."id" = 2 LIMIT 1
+  [1m[36mBuilding Load (0.2ms)[0m  [1mSELECT "buildings".* FROM "buildings" WHERE "buildings"."id" = 4 LIMIT 1[0m
+Rendered shared/_map.html.erb (62.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1
+Rendered events/_event.html.erb (28.9ms)
+Rendered events/recent.html.erb within layouts/application (93.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Completed 200 OK in 105ms (Views: 100.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-09 23:34:59 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-09 23:34:59 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/images/bg.jpg" for 127.0.0.1 at 2012-08-09 23:34:59 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/bg.jpg"):
+  
+
+Rendered /home/bzhu01/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/events/3" for 127.0.0.1 at 2012-08-09 23:35:02 -0400
+  Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", "3"]]
+  [1m[36mBuilding Load (0.2ms)[0m  [1mSELECT "buildings".* FROM "buildings" WHERE "buildings"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mAttend Load (0.3ms)[0m  [1mSELECT "attends".* FROM "attends" WHERE "attends"."event_id" = 3[0m
+Rendered attends/_form.html.erb (3.8ms)
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "attends" WHERE "attends"."event_id" = 3
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mFollow Load (0.2ms)[0m  SELECT "follows".* FROM "follows" WHERE "follows"."followed_user_id" = 3
+Rendered events/_invite.html.erb (12.4ms)
+Rendered events/show.html.erb within layouts/application (153.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Completed 200 OK in 185ms (Views: 158.6ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-09 23:35:03 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-09 23:35:03 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/images/bg.jpg" for 127.0.0.1 at 2012-08-09 23:35:03 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/bg.jpg"):
+  
+
+Rendered /home/bzhu01/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
