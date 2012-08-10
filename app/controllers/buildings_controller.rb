@@ -40,8 +40,21 @@ class BuildingsController < ApplicationController
   # POST /buildings
   # POST /buildings.xml
   def create
+    require 'net/http'
     @building = Building.new(params[:building])
 
+    uri = "http://maps.google.com/maps/api/geocode/xml?address=" + @building.fulladdress.gsub(' ','+') + "&sensor=false"
+    resp = Net::HTTP.get(URI.parse(uri))
+    noko_resp = Nokogiri::XML(resp)
+    
+    noko_resp.xpath("//GeocodeResponse/result/geometry/location").each do |node|
+        #puts node.xpath('lat').inner_text.inspect
+        #puts node.xpath('lng').inner_text.inspect
+        @building.lat = node.xpath('lat').inner_text
+        @building.lon = node.xpath('lng').inner_text
+    end
+    
+    
     respond_to do |format|
       if @building.save
         format.html { redirect_to(@building, :notice => 'Building was successfully created.') }

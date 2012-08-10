@@ -34,6 +34,14 @@
   <b>Zip:</b>
   <%= @building.zip %>
 </p>
+<p>
+  <b>lat:</b>
+  <%= @building.lat %>
+</p>
+<p>
+  <b>lon:</b>
+  <%= @building.lon %>
+</p>
 
     <% if session[:user_id].nil?%>
       <%elsif User.find(session[:user_id]).username == "admin" %>

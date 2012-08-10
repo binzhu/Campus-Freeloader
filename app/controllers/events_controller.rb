@@ -19,14 +19,8 @@ class EventsController < ApplicationController
      @events=Array.new
       @buildings=Array.new
       
-    Event.all.each do |e|
-      if  e.end_time >= Time.now
-        @events.push(e)
-      end
-    end
+     @events = Event.find(:all, :conditions => ["end_time > ?", Time.now], :order => "end_time") 
 
-    @events.sort_by!{|e| e.end_time }.reverse!
-  
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @events }

@@ -1,5 +1,5 @@
 class AdminController < ApplicationController
-  def login
+  def login 
     if request.post?
       user=User.find_by_username(params[:username])
       if ! user.nil? && user.password == params[:password]

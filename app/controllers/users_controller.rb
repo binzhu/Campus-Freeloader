@@ -66,7 +66,7 @@ class UsersController < ApplicationController
         format.html { redirect_to(@user, :notice => 'User was successfully created.')}
         format.xml  { render :xml => @user, :status => :created, :location => @user }
       else
-        format.html { render :action => "new" }
+        format.html { render :action => "register" }
         format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
       end
     end

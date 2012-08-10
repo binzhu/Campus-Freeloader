@@ -10,7 +10,32 @@
 
 <script type="text/javascript">
   var gMap;
+  var gLastInfowindow;
   var gCenterLatLng = new google.maps.LatLng(43.037956, -76.13343);
+
+  var createMarkerandInfowindow = function(position,title,contentstr,map ){
+        var marker = new google.maps.Marker({position: position,
+                                            title:title,
+                                            map: map
+        });
+        
+        var infow =  new google.maps.InfoWindow({
+        content: contentstr
+        });
+        
+        google.maps.event.addListener(marker, 'mouseover',function(){
+          if (gLastInfowindow != null){
+            gLastInfowindow.close(map,marker)  
+          }
+          infow.open(map,marker);
+          gLastInfowindow = infow;
+        })
+        google.maps.event.addListener(infow, 'mouseout',function(){
+          infow.close(map,marker);
+        }) 
+    
+  }
+  
 
   window.onload = function () {
       var myOptions = {
@@ -25,21 +50,23 @@
       };
       gMap = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
       
-      var building, latlng, title, image, marker;
+      var building, latlng, title, image, contentString;
+      var cnt = <%=@events.count%>;
       
+      var gLastInfowindow;
       <% @events.each do |e| %>
-      event = <%= e.to_json.to_s.html_safe %>.event
-      building = <%= e.building.to_json.to_s.html_safe %>.building
+      
+      event = <%= e.to_json.to_s.html_safe %>
+      building = <%= e.building.to_json.to_s.html_safe %>
       latlng = new google.maps.LatLng(building.lat, building.lon);
-      marker = new google.maps.Marker({position: latlng,
-                                        title:event.eventname +'@' + building.buildname, map: gMap
-        });
-        
-        google.maps.event.addListener(marker, 'click',
-        function(){
-          location.href = "<%= e.id%>";
-        }  )
-        
+      
+      contentString = '<div>What to eat?' + event.desc + '</div>'+
+                      '<div>where? '+ building.buildname +'</div>' +
+                      '<div>provided by?' + event.host + '</div>' +
+                      '<div>' + '<%=link_to e.desc, e%>' + '</div>';
+      
+      createMarkerandInfowindow(latlng,event.eventname +'@' + building.buildname, contentString,gMap );
+      
         <% end %>
       
   }
