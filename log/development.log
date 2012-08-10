@@ -5939,3 +5939,123 @@ ActionController::RoutingError (No route matches [GET] "/images/bg.jpg"):
   
 
 Rendered /home/bzhu01/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateBuildings (20111129004316)
+Migrating to CreateEvents (20111129005332)
+Migrating to CreateUsers (20111129005446)
+Migrating to CreateAttends (20111129165450)
+Migrating to CreateFollows (20111206144146)
+Migrating to AddGeolocationToBuilding (20111208033458)
+Migrating to AddBuildings (20111208042559)
+Migrating to AddUsers (20120419113727)
+Migrating to ChangeDatatypeForAttends (20120810034744)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateBuildings (20111129004316)
+Migrating to CreateEvents (20111129005332)
+Migrating to CreateUsers (20111129005446)
+Migrating to CreateAttends (20111129165450)
+Migrating to CreateFollows (20111206144146)
+Migrating to AddGeolocationToBuilding (20111208033458)
+Migrating to AddBuildings (20111208042559)
+Migrating to AddUsers (20120419113727)
+Migrating to ChangeDatatypeForAttends (20120810034744)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "altered_attends" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" varchar(255), "event_id" varchar(255), "attend" date, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("attends")
+  [1m[36m (0.2ms)[0m  [1mSELECT * FROM "attends"[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "attends"
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "attends" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" varchar(255), "event_id" integer(255), "attend" date, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("altered_attends")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "altered_attends"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "altered_attends"
+  [1m[36m (0.2ms)[0m  [1mCREATE TEMPORARY TABLE "altered_attends" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" varchar(255), "event_id" integer(255), "attend" date, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("attends")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "attends"[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "attends"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "attends" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer(255), "event_id" integer(255), "attend" date, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("altered_attends")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "altered_attends"[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "altered_attends"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120810034744')[0m
+  [1m[35m (0.4ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("attends")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("buildings")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("events")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("follows")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateBuildings (20111129004316)
+Migrating to CreateEvents (20111129005332)
+Migrating to CreateUsers (20111129005446)
+Migrating to CreateAttends (20111129165450)
+Migrating to CreateFollows (20111206144146)
+Migrating to AddGeolocationToBuilding (20111208033458)
+Migrating to AddBuildings (20111208042559)
+Migrating to AddUsers (20120419113727)
+Migrating to ChangeDatatypeForAttends (20120810034744)
+Migrating to ChangeDatetypeForTables (20120810034952)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "altered_events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "eventname" varchar(255), "desc" varchar(255), "host" varchar(255), "building_id" varchar(255), "idcheck" boolean, "user_id" varchar(255), "start_time" datetime, "end_time" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.3ms)[0m  PRAGMA index_list("events")
+  [1m[36m (0.2ms)[0m  [1mSELECT * FROM "events"[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "altered_events" ("id","eventname","desc","host","building_id","idcheck","user_id","start_time","end_time","created_at","updated_at") VALUES (3, '', 'sandwiches', 'ischool', '1', 'f', '3', '2012-08-11 02:32:00.000000', '2012-08-11 02:32:00.000000', '2012-08-10 02:32:42.000000', '2012-08-10 02:32:58.207589')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "altered_events" ("id","eventname","desc","host","building_id","idcheck","user_id","start_time","end_time","created_at","updated_at") VALUES (4, 'open house', 'pizza', 'The university', '2', 'f', '3', '2012-08-12 02:39:00.000000', '2012-08-12 02:39:00.000000', '2012-08-10 02:39:09.000000', '2012-08-10 02:39:33.213365')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_events" ("id","eventname","desc","host","building_id","idcheck","user_id","start_time","end_time","created_at","updated_at") VALUES (5, 'summer party', 'BBQ', 'ischool', '4', 'f', '3', '2012-08-13 02:42:00.000000', '2012-08-13 02:42:00.000000', '2012-08-10 02:42:07.000000', '2012-08-10 02:42:31.809448')
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "events"[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "eventname" varchar(255), "desc" varchar(255), "host" varchar(255), "building_id" integer(255), "idcheck" boolean, "user_id" varchar(255), "start_time" datetime, "end_time" datetime, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("altered_events")[0m
+  [1m[35m (0.2ms)[0m  SELECT * FROM "altered_events"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "events" ("id","eventname","desc","host","building_id","idcheck","user_id","start_time","end_time","created_at","updated_at") VALUES (3, '', 'sandwiches', 'ischool', '1', 'f', '3', '2012-08-11 02:32:00.000000', '2012-08-11 02:32:00.000000', '2012-08-10 02:32:42.000000', '2012-08-10 02:32:58.207589')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "events" ("id","eventname","desc","host","building_id","idcheck","user_id","start_time","end_time","created_at","updated_at") VALUES (4, 'open house', 'pizza', 'The university', '2', 'f', '3', '2012-08-12 02:39:00.000000', '2012-08-12 02:39:00.000000', '2012-08-10 02:39:09.000000', '2012-08-10 02:39:33.213365')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "events" ("id","eventname","desc","host","building_id","idcheck","user_id","start_time","end_time","created_at","updated_at") VALUES (5, 'summer party', 'BBQ', 'ischool', '4', 'f', '3', '2012-08-13 02:42:00.000000', '2012-08-13 02:42:00.000000', '2012-08-10 02:42:07.000000', '2012-08-10 02:42:31.809448')[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "altered_events"
+  [1m[36m (0.2ms)[0m  [1mCREATE TEMPORARY TABLE "altered_events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "eventname" varchar(255), "desc" varchar(255), "host" varchar(255), "building_id" integer(255), "idcheck" boolean, "user_id" varchar(255), "start_time" datetime, "end_time" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("events")
+  [1m[36m (0.2ms)[0m  [1mSELECT * FROM "events"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "altered_events" ("id","eventname","desc","host","building_id","idcheck","user_id","start_time","end_time","created_at","updated_at") VALUES (3, '', 'sandwiches', 'ischool', 1, 'f', '3', '2012-08-11 02:32:00.000000', '2012-08-11 02:32:00.000000', '2012-08-10 02:32:42.000000', '2012-08-10 02:32:58.207589')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "altered_events" ("id","eventname","desc","host","building_id","idcheck","user_id","start_time","end_time","created_at","updated_at") VALUES (4, 'open house', 'pizza', 'The university', 2, 'f', '3', '2012-08-12 02:39:00.000000', '2012-08-12 02:39:00.000000', '2012-08-10 02:39:09.000000', '2012-08-10 02:39:33.213365')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_events" ("id","eventname","desc","host","building_id","idcheck","user_id","start_time","end_time","created_at","updated_at") VALUES (5, 'summer party', 'BBQ', 'ischool', 4, 'f', '3', '2012-08-13 02:42:00.000000', '2012-08-13 02:42:00.000000', '2012-08-10 02:42:07.000000', '2012-08-10 02:42:31.809448')
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "events"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "eventname" varchar(255), "desc" varchar(255), "host" varchar(255), "building_id" integer(255), "idcheck" boolean, "user_id" integer(255), "start_time" datetime, "end_time" datetime, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("altered_events")[0m
+  [1m[35m (0.2ms)[0m  SELECT * FROM "altered_events"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "events" ("id","eventname","desc","host","building_id","idcheck","user_id","start_time","end_time","created_at","updated_at") VALUES (3, '', 'sandwiches', 'ischool', 1, 'f', '3', '2012-08-11 02:32:00.000000', '2012-08-11 02:32:00.000000', '2012-08-10 02:32:42.000000', '2012-08-10 02:32:58.207589')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "events" ("id","eventname","desc","host","building_id","idcheck","user_id","start_time","end_time","created_at","updated_at") VALUES (4, 'open house', 'pizza', 'The university', 2, 'f', '3', '2012-08-12 02:39:00.000000', '2012-08-12 02:39:00.000000', '2012-08-10 02:39:09.000000', '2012-08-10 02:39:33.213365')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "events" ("id","eventname","desc","host","building_id","idcheck","user_id","start_time","end_time","created_at","updated_at") VALUES (5, 'summer party', 'BBQ', 'ischool', 4, 'f', '3', '2012-08-13 02:42:00.000000', '2012-08-13 02:42:00.000000', '2012-08-10 02:42:07.000000', '2012-08-10 02:42:31.809448')[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "altered_events"
+  [1m[36m (0.1ms)[0m  [1mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "password" varchar(255), "email" varchar(255), "fname" varchar(255), "lname" varchar(255), "building_id" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "users"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "altered_users" ("id","username","password","email","fname","lname","building_id","created_at","updated_at") VALUES (1, 'Gellar', 'test', 'bzhu01@syr.edu', '', '', '1', '2012-04-19 11:40:19.803163', '2012-04-19 11:40:19.803163')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_users" ("id","username","password","email","fname","lname","building_id","created_at","updated_at") VALUES (2, 'Ipod', 'test', 'bzhu01@syr.edu', '', '', '1', '2012-04-19 11:40:19.805462', '2012-04-19 11:40:19.805462')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_users" ("id","username","password","email","fname","lname","building_id","created_at","updated_at") VALUES (3, 'admin2', 'admin2', 'bzhu01@syr.edu', 'Bin', 'Zhu', '1', '2012-04-19 11:40:19.806900', '2012-04-19 11:40:19.806900')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_users" ("id","username","password","email","fname","lname","building_id","created_at","updated_at") VALUES (4, 'flight', 'test', 'bzhu01@syr.edu', '', '', '1', '2012-04-19 11:40:19.808336', '2012-04-19 11:40:19.808336')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "altered_users" ("id","username","password","email","fname","lname","building_id","created_at","updated_at") VALUES (5, 'Bradford', 'test', 'bzhu01@syr.edu', '', '', '2', '2012-04-19 11:40:19.809731', '2012-04-19 11:40:19.809731')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "altered_users" ("id","username","password","email","fname","lname","building_id","created_at","updated_at") VALUES (6, 'BrownLady', 'test', 'bzhu01@syr.edu', '', '', '1', '2012-04-19 11:40:19.811151', '2012-04-19 11:40:19.811151')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "altered_users" ("id","username","password","email","fname","lname","building_id","created_at","updated_at") VALUES (7, 'NegaEater', 'test', 'bzhu01@syr.edu', '', '', '1', '2012-04-19 11:40:19.812480', '2012-04-19 11:40:19.812480')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "altered_users" ("id","username","password","email","fname","lname","building_id","created_at","updated_at") VALUES (8, 'bin', '123', '123', '123', '123', '2', '2012-06-30 23:21:30.496748', '2012-06-30 23:21:30.496748')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "altered_users" ("id","username","password","email","fname","lname","building_id","created_at","updated_at") VALUES (9, '123', '123', 'qweqwe123123123', '123', '12', '1', '2012-06-30 23:24:36.464837', '2012-06-30 23:24:36.464837')
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "password" varchar(255), "email" varchar(255), "fname" varchar(255), "lname" varchar(255), "building_id" integer(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("altered_users")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "altered_users"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "users" ("id","username","password","email","fname","lname","building_id","created_at","updated_at") VALUES (1, 'Gellar', 'test', 'bzhu01@syr.edu', '', '', '1', '2012-04-19 11:40:19.803163', '2012-04-19 11:40:19.803163')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "users" ("id","username","password","email","fname","lname","building_id","created_at","updated_at") VALUES (2, 'Ipod', 'test', 'bzhu01@syr.edu', '', '', '1', '2012-04-19 11:40:19.805462', '2012-04-19 11:40:19.805462')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "users" ("id","username","password","email","fname","lname","building_id","created_at","updated_at") VALUES (3, 'admin2', 'admin2', 'bzhu01@syr.edu', 'Bin', 'Zhu', '1', '2012-04-19 11:40:19.806900', '2012-04-19 11:40:19.806900')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "users" ("id","username","password","email","fname","lname","building_id","created_at","updated_at") VALUES (4, 'flight', 'test', 'bzhu01@syr.edu', '', '', '1', '2012-04-19 11:40:19.808336', '2012-04-19 11:40:19.808336')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "users" ("id","username","password","email","fname","lname","building_id","created_at","updated_at") VALUES (5, 'Bradford', 'test', 'bzhu01@syr.edu', '', '', '2', '2012-04-19 11:40:19.809731', '2012-04-19 11:40:19.809731')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "users" ("id","username","password","email","fname","lname","building_id","created_at","updated_at") VALUES (6, 'BrownLady', 'test', 'bzhu01@syr.edu', '', '', '1', '2012-04-19 11:40:19.811151', '2012-04-19 11:40:19.811151')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "users" ("id","username","password","email","fname","lname","building_id","created_at","updated_at") VALUES (7, 'NegaEater', 'test', 'bzhu01@syr.edu', '', '', '1', '2012-04-19 11:40:19.812480', '2012-04-19 11:40:19.812480')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "users" ("id","username","password","email","fname","lname","building_id","created_at","updated_at") VALUES (8, 'bin', '123', '123', '123', '123', '2', '2012-06-30 23:21:30.496748', '2012-06-30 23:21:30.496748')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "users" ("id","username","password","email","fname","lname","building_id","created_at","updated_at") VALUES (9, '123', '123', 'qweqwe123123123', '123', '12', '1', '2012-06-30 23:24:36.464837', '2012-06-30 23:24:36.464837')[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "altered_users"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120810034952')[0m
+  [1m[35m (0.4ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("attends")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("buildings")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("events")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("follows")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("users")

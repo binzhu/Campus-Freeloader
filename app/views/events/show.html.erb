@@ -53,7 +53,7 @@
 
 
 <div id="attendbtn">
-  <% evats = Attend.find_all_by_event_id(@event.id.to_s).map { |a| a.user_id } %>
+  <% evats = @event.attends.all.map { |a| a.user_id } %>
   <% if evats.include?(session[:user_id].to_s)%>
 Attending
   <% else %>

@@ -11,11 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120419113727) do
+ActiveRecord::Schema.define(:version => 20120810034952) do
 
   create_table "attends", :force => true do |t|
-    t.string   "user_id"
-    t.string   "event_id"
+    t.integer  "user_id",    :limit => 255
+    t.integer  "event_id",   :limit => 255
     t.date     "attend"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -31,17 +31,17 @@ ActiveRecord::Schema.define(:version => 20120419113727) do
     t.string   "zip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "lat"
-    t.decimal  "lon"
+    t.float    "lat"
+    t.float    "lon"
   end
 
   create_table "events", :force => true do |t|
     t.string   "eventname"
     t.string   "desc"
     t.string   "host"
-    t.string   "building_id"
+    t.integer  "building_id", :limit => 255
     t.boolean  "idcheck"
-    t.string   "user_id"
+    t.integer  "user_id",     :limit => 255
     t.datetime "start_time"
     t.datetime "end_time"
     t.datetime "created_at"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(:version => 20120419113727) do
     t.string   "email"
     t.string   "fname"
     t.string   "lname"
-    t.string   "building_id"
+    t.integer  "building_id", :limit => 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
